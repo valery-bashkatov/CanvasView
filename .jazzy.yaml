@@ -1,0 +1,10 @@
+output: Reference
+clean: false
+sdk: iphone
+author: Valery Bashkatov
+author_url: http://valery.bashkatov.org
+github_url: https://github.com/valery-bashkatov/CanvasView
+module: CanvasView
+readme: README.md
+min_acl: public
+theme: fullwidth
