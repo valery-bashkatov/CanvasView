@@ -11,12 +11,12 @@ import UIKit
 /**
  The `CanvasView` class makes it easy to draw shapes.
  */
-public class CanvasView: UIView {
+open class CanvasView: UIView {
     
     // MARK: - Properties
     
     /// The paths that will be drawn.
-    public var paths = [CanvasPath]() {
+    open var paths = [CanvasPath]() {
         didSet {
             
             // Redraw paths
@@ -39,16 +39,16 @@ public class CanvasView: UIView {
     }
     
     /// Makes initial setup.
-    private func setup() {
+    fileprivate func setup() {
         
         // Default transparent background.
-        opaque = false
+        isOpaque = false
     }
     
     // MARK: - Drawing
     
     /// :nodoc:
-    public override func drawRect(rect: CGRect) {
+    open override func draw(_ rect: CGRect) {
         for path in paths {
             if path.strokeColor != nil {
                 path.strokeColor!.setStroke()

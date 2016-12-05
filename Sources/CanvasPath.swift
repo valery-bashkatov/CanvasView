@@ -13,13 +13,13 @@ import UIKit
  
  - seealso: `CanvasView`
  */
-public class CanvasPath: UIBezierPath {
+open class CanvasPath: UIBezierPath {
     
     // MARK: - Properties
     
     /// The stroke color.
-    public var strokeColor: UIColor?
+    open var strokeColor: UIColor?
     
     /// The fill color.
-    public var fillColor: UIColor?
+    open var fillColor: UIColor?
 }
