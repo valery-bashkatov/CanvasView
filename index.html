@@ -78,6 +78,40 @@
 <a href='#documentation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='documentation'>Documentation</h2>
 
 <p>API Reference is located at <a href="http://valery-bashkatov.github.io/CanvasView">http://valery-bashkatov.github.io/CanvasView</a>.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">UIKit</span>
+<span class="kd">import</span> <span class="kt">CanvasView</span>
+
+<span class="kd">class</span> <span class="kt">ViewController</span><span class="p">:</span> <span class="kt">UIViewController</span> <span class="p">{</span>
+
+    <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="o">.</span><span class="nf">viewDidLoad</span><span class="p">()</span>
+
+        <span class="k">let</span> <span class="nv">canvas</span> <span class="o">=</span> <span class="kt">CanvasView</span><span class="p">(</span><span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">300</span><span class="p">))</span>
+        <span class="k">let</span> <span class="nv">borders</span> <span class="o">=</span> <span class="kt">CanvasPath</span><span class="p">()</span>
+
+        <span class="n">borders</span><span class="o">.</span><span class="n">strokeColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">white</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">borders</span><span class="o">.</span><span class="nf">move</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">50</span><span class="p">))</span>
+        <span class="n">borders</span><span class="o">.</span><span class="nf">addLine</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">50</span><span class="p">))</span>
+        <span class="n">borders</span><span class="o">.</span><span class="nf">addLine</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">350</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">275</span><span class="p">))</span>
+        <span class="n">borders</span><span class="o">.</span><span class="nf">addLine</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">275</span><span class="p">))</span>
+        <span class="n">borders</span><span class="o">.</span><span class="nf">addLine</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">50</span><span class="p">))</span>
+
+        <span class="k">let</span> <span class="nv">white</span> <span class="o">=</span> <span class="kt">CanvasPath</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">330</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">75</span><span class="p">))</span>
+        <span class="n">white</span><span class="o">.</span><span class="n">fillColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="o">.</span><span class="n">white</span>
+
+        <span class="k">let</span> <span class="nv">blue</span> <span class="o">=</span> <span class="kt">CanvasPath</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">125</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">330</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">75</span><span class="p">))</span>
+        <span class="n">blue</span><span class="o">.</span><span class="n">fillColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.224</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.651</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">let</span> <span class="nv">red</span> <span class="o">=</span> <span class="kt">CanvasPath</span><span class="p">(</span><span class="nv">rect</span><span class="p">:</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">330</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">75</span><span class="p">))</span>
+        <span class="n">red</span><span class="o">.</span><span class="n">fillColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">red</span><span class="p">:</span> <span class="mf">0.835</span><span class="p">,</span> <span class="nv">green</span><span class="p">:</span> <span class="mf">0.169</span><span class="p">,</span> <span class="nv">blue</span><span class="p">:</span> <span class="mf">0.118</span><span class="p">,</span> <span class="nv">alpha</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">canvas</span><span class="o">.</span><span class="n">paths</span> <span class="o">+=</span> <span class="p">[</span><span class="n">borders</span><span class="p">,</span> <span class="n">white</span><span class="p">,</span> <span class="n">blue</span><span class="p">,</span> <span class="n">red</span><span class="p">]</span>
+
+        <span class="n">view</span><span class="o">.</span><span class="nf">addSubview</span><span class="p">(</span><span class="n">canvas</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
 
           </div>
         </section>
@@ -86,7 +120,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2016 <a class="link" href="http://valery.bashkatov.org" target="_blank" rel="external">Valery Bashkatov</a>. All rights reserved. (Last updated: 2016-12-05)</p>
+      <p>&copy; 2017 <a class="link" href="http://valery.bashkatov.org" target="_blank" rel="external">Valery Bashkatov</a>. All rights reserved. (Last updated: 2017-01-13)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
